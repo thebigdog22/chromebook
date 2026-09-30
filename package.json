@@ -1,0 +1,24 @@
+{
+  "name": "chromebook-browser",
+  "version": "0.1.0",
+  "description": "A Chromium-based browser shell designed to replace Chrome on Windows, Linux, and Android-compatible web runtimes.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "browser",
+    "chromium",
+    "electron",
+    "chrome-like"
+  ],
+  "author": "thebigdog22",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.0"
+  }
+}

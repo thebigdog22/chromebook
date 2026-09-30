@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chromebook Browser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="toolbar">
+        <div class="nav-group">
+          <button id="backBtn" title="Back">←</button>
+          <button id="forwardBtn" title="Forward">→</button>
+          <button id="reloadBtn" title="Reload">↻</button>
+          <button id="homeBtn" title="Home">⌂</button>
+        </div>
+
+        <div class="address-wrap">
+          <input id="addressBar" type="text" value="https://example.com" />
+          <button id="goBtn">Go</button>
+        </div>
+
+        <div class="toolbar-actions">
+          <button id="bookmarkBtn" title="Bookmark">★</button>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <span>Chromebook</span>
+        </div>
+
+        <div class="bookmark-list">
+          <h3>Bookmarks</h3>
+          <ul id="bookmarkList">
+            <li><button data-url="https://example.com">Example</button></li>
+            <li><button data-url="https://github.com">GitHub</button></li>
+            <li><button data-url="https://www.google.com">Google</button></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content-panel">
+        <webview id="browserView" src="https://example.com" useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"></webview>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

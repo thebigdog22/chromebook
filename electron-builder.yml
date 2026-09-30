@@ -1,0 +1,61 @@
+appId: com.chromebook.browser
+productName: Chromebook Browser
+directories:
+  buildResources: assets
+files:
+  - src/**/*
+  - package.json
+  - node_modules/**/*
+
+win:
+  target:
+    - nsis
+    - portable
+  certificateFile: null
+  certificatePassword: null
+  signingHashAlgorithms:
+    - sha256
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Chromebook Browser
+
+portable:
+  artifactName: ${productName}-${version}-portable.${ext}
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Utility
+
+deb:
+  depends:
+    - gconf2
+    - gconf2-common
+    - libappindicator1
+    - libnotify4
+    - libxtst6
+    - xdg-utils
+
+appImage:
+  artifactName: ${productName}-${version}.${ext}
+
+mac:
+  target:
+    - dmg
+    - zip
+  category: public.app-category.utilities
+
+dmg:
+  contents:
+    - x: 130
+      y: 220
+      type: file
+    - x: 438
+      y: 220
+      type: link
+      path: /Applications
